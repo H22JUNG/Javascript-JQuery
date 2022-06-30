@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-image:url("img/pic1.jpg");
+            background-repeat: no-repeat; 
+            background-position: center; 
+            background-size: cover; 
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div"></div>
+    <button id="btn1">버튼1</button>
+    <button id="btn2">버튼2</button>
+    <button id="btn3">버튼3</button>
+
+    <script>
+        document.getElementById("btn1").addEventListener("click",function() {
+            document.getElementById("div").style = `background-image:url("img/pic1.jpg");`; 
+        });
+        document.getElementById("btn2").addEventListener("click",function() {
+            document.getElementById("div").style = `background-image:url("img/pic2.jpg");`; 
+        });
+        document.getElementById("btn3").addEventListener("click",function() {
+            document.getElementById("div").style =  `background-image:url("img/pic3.jpg");`; 
+        });
+    </script>
+</body>
+</html>

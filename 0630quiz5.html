@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            width: 100px;
+            height: 80px;
+        }
+
+        div {
+            border: 1px solid salmon;
+        }
+    
+    </style>
+
+</head>
+
+<body>
+    <button id="btn1">탭메뉴1</button>
+    <button id="btn2">탭메뉴2</button>
+    <button id="btn3">탭메뉴3</button>
+    <div id="div1">
+        <h1>탭메뉴1</h1><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque rem distinctio deleniti ducimus aliquid
+            veniam rerum voluptate labore nihil assumenda velit dolor reprehenderit repudiandae, unde voluptates harum!
+            Et, iste atque.</p>
+    </div>
+
+    <div id="div2">
+        <h1>탭메뉴2</h1><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque rem distinctio deleniti ducimus aliquid
+            veniam rerum voluptate labore nihil assumenda velit dolor reprehenderit repudiandae, unde voluptates harum!
+            Et, iste atque.</p>
+    </div>
+
+    <div id="div3">
+        <h1>탭메뉴3</h1><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque rem distinctio deleniti ducimus aliquid
+            veniam rerum voluptate labore nihil assumenda velit dolor reprehenderit repudiandae, unde voluptates harum!
+            Et, iste atque.</p>
+    </div>
+
+
+
+    <script>
+        document.getElementById("div2").style.display="none";
+        document.getElementById("div3").style.display="none";
+        document.getElementById("div1").style.display="none";
+
+        document.getElementById("btn1").addEventListener("click", function () {
+            document.getElementById("div1").style.display = "block";
+            document.getElementById("div2").style.display = "none";
+            document.getElementById("div3").style.display = "none";
+        });
+        document.getElementById("btn2").addEventListener("click", function () {
+            document.getElementById("div2").style.display = "block";
+            document.getElementById("div1").style.display = "none";
+            document.getElementById("div3").style.display = "none";
+        });
+        document.getElementById("btn3").addEventListener("click", function () {
+            document.getElementById("div3").style.display = "block";
+            document.getElementById("div1").style.display = "none";
+            document.getElementById("div2").style.display = "none";
+        });
+
+    </script>
+</body>
+
+</html>
