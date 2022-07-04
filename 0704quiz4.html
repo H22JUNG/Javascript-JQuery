@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        button {
+            width: 800px;
+            height: 50px;
+            background-color: antiquewhite;
+            border: none;
+            text-align: left;
+        }
+        button:hover {
+            background-color: rgb(143, 136, 128);
+        }
+        .text {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn" id="S1">Section 1</button>
+    <p class="text" id="text1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos, consectetur dolor? Nisi quos sapiente, iusto unde fugit aut similique quis facere qui commodi tempora maxime, ab consectetur quae! Ea, dolore?</p>
+    <button class="btn" id="S2">Section 2</button>
+    <p class="text" id="text2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos, consectetur dolor? Nisi quos sapiente, iusto unde fugit aut similique quis facere qui commodi tempora maxime, ab consectetur quae! Ea, dolore?</p>
+    <button class="btn" id="S3">Section 3</button>
+    <p class="text" id="text3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos, consectetur dolor? Nisi quos sapiente, iusto unde fugit aut similique quis facere qui commodi tempora maxime, ab consectetur quae! Ea, dolore?</p>
+
+    <script>
+        let open = document.querySelectorAll("text")
+         document.getElementById("S"+[i]).addEventListener("click",function(){
+        for (let i = 1; index <= 3; i++) {
+
+            document.getElementById("text"+[i]).classList.remove("text");
+        });
+        
+        
+    </script>
+</body>
+</html>
