@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            width: 200px;
+            height: 50px;
+            background-color: antiquewhite;
+            border: none;
+            text-align: left;
+        }
+        button:hover {
+            background-color: rgb(143, 136, 128);
+        }
+        .text-box {
+            width: 200px;
+            height: 150px;
+            border: 1px solid salmon;
+            position: absolute;
+            display: none;
+        }
+
+        body {
+            display: flex;
+        }
+
+      .see{
+        display: block;
+      }
+    </style>
+</head>
+<body>
+    <div class="box"> 
+    <button id="btn1">서울</button><br>
+    <button id="btn2">대구</button><br>
+    <button id="btn3">부산</button>
+    </div>
+    
+    <div class="text">
+    <div class="text-box" id="text1"><h3>Seoul</h3><p>대한민국의 중심 도시 서울</p></div>
+    <div class="text-box" id="text2"><h3>Dae-gu</h3><p>대한민국의 대표 관광지 대구</p></div>
+    <div class="text-box" id="text3"><h3>Busan</h3><p>대한민국의 두번째 직할 도시 부산</p></div>
+    </div>
+  
+
+    <script>
+        for(let i=1; i<=3; i++) {
+            document.getElementById(`btn${i}`).addEventListener("click",function(){
+                document.getElementById(`text${i}`).classList.add("see");
+                for(let a=1; a <=3; a++) {
+                    if(i!=a){
+                    document.getElementById(`text${a}`).classList.remove("see");
+                    }
+                }
+            })
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .btn-b {
+            display: flex;
+        }
+
+        .btn {
+            width: 300px;
+            height: 50px;
+            border: none;
+            background-color: gray;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .color {
+            width: 1220px;
+            display: none;
+            margin: 0;
+            padding: 0;
+            height: 400px;
+            color: white;
+            /* text-align: left; */
+
+        }
+
+        .click {
+            display: block;
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="btn-b">
+        <div class="btn" id="btn1">Home</div>
+        <div class="btn" id="btn2">News</div>
+        <div class="btn" id="btn3">Contact</div>
+        <div class="btn" id="btn4">About</div>
+    </div>
+
+
+    <div class="dd">
+        <div class="color" id="red">
+            <h1>Home</h1>
+        </div>
+        <div class="color" id="green">
+            <h1>News</h1>
+        </div>
+        <div class="color" id="blue">
+            <h1>Contact</h1>
+        </div>
+        <div class="color" id="yellow">
+            <h1>About</h1>
+        </div>
+    </div>
+
+    <script>
+        const arr1 = ['red', 'green', 'blue', 'yellow'];
+        for (let i = 0; i < 4; i++) {
+            document.getElementById("btn" + (i + 1)).addEventListener("click", function () {
+                document.getElementById(arr1[i]).classList.add("click");
+                document.getElementById(arr1[i]).style.backgroundColor = arr1[i];
+                document.getElementById("btn" + (i + 1)).style.backgroundColor = arr1[i];
+                for (let a = 0; a < 4; a++) {
+                    if (i != a) {
+                        document.getElementById(arr1[a]).classList.remove("click");
+                        document.getElementById("btn" + (a + 1)).style.backgroundColor = "gray";
+                    }
+                }
+            })
+        };
+    </script>
+</body>
+
+</html>
