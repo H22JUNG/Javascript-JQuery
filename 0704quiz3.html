@@ -29,24 +29,28 @@
    <button id="btn5">5</button>
 
     <script>
-       
-
-        // if (document.getElementById(`btn${i}`).addEventListener="click"){
-        //     for (let i = 1; i <= 5 ; i++) {
-        //     document.getElementById(`btn${i}`).classList.add("click");}
      
-        for (let i = 1; i <= 5 ; i++) {
-            document.getElementById(`btn${i}`).addEventListener("click", function (){
-            document.getElementById(`btn${i}`).classList.add("click");
-        })};
+        // for (let i = 1; i <= 5 ; i++) {
+        //      for(let a = 1; a<=5; a++) { //안누르면 계속 12345 돌고있음
+        //         document.getElementById(`btn${i}`).addEventListener("click", function (){ //클릭했을때
+        //             if(i == a) {
+        //                 document.getElementById(`btn${a}`).classList.add("click");
+        //             } else {
+        //                 document.getElementById(`btn${a}`).classList.remove("click");
+        //             }
+        //         })}};
 
-        for(let i = 0; i<5; i++) {
-            document.getElementById(`btn${i}`).classList.remove("click");
-        };
 
-        
-    // };
-      
+         for (let i = 1; i <= 5 ; i++) {
+             document.getElementById(`btn${i}`).addEventListener("click", function (){ 
+                   document.getElementById(`btn${i}`).classList.add("click");
+                   for (let j=1; j<=5; j++){
+                    if (j!=i) {
+                        document.getElementById(`btn${j}`).classList.remove("click");
+                    }
+                   }
+                    }
+                )};
     </script>
 </body>
 </html>

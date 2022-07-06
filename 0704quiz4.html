@@ -31,13 +31,14 @@
     <p class="text" id="text3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos, consectetur dolor? Nisi quos sapiente, iusto unde fugit aut similique quis facere qui commodi tempora maxime, ab consectetur quae! Ea, dolore?</p>
 
     <script>
-        let open = document.querySelectorAll("text")
-         document.getElementById("S"+[i]).addEventListener("click",function(){
-        for (let i = 1; index <= 3; i++) {
-
-            document.getElementById("text"+[i]).classList.remove("text");
-        });
-        
+        for (let i = 1; i <= 3; i++) {
+            document.getElementById("S"+[i]).addEventListener("click",function(){
+                document.getElementById("text"+[i]).classList.remove("text");
+                for(let a = 1; a <= 3; a++) {
+                if(i!=a)
+                 document.getElementById("text"+[a]).classList.add("text");
+        }
+            })};
         
     </script>
 </body>
