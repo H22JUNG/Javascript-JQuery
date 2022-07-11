@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul1>
+        <li><label for="item">아이템1</label><input type="checkbox" name="item" id="0"></li>
+        <li><label for="item">아이템2</label><input type="checkbox" name="item" id="1"></li>
+        <li><label for="item">아이템3</label><input type="checkbox" name="item" id="2"></li>
+        <li><label for="item">아이템4</label><input type="checkbox" name="item" id="3"></li>
+        <li><label for="item">아이템5</label><input type="checkbox" name="item" id="4"></li>
+    </ul1>
+    <br>
+    <ul2>
+        <li><label for="item">아이템6</label><input type="checkbox" name="item" id="5"></li>
+        <li><label for="item">아이템7</label><input type="checkbox" name="item" id="6"></li>
+        <li><label for="item">아이템8</label><input type="checkbox" name="item" id="7"></li>
+        <li><label for="item">아이템9</label><input type="checkbox" name="item" id="8"></li>
+        <li><label for="item">아이템10</label><input type="checkbox" name="item" id="10"></li>
+    </ul2>
+    <br>
+
+    <button id=btn1>ul1위에서 ul2위로</button><br>
+    <button id=btn2>ul1위에서 ul2아래로</button><br>
+    <button id=btn3>ul1아래서 ul2위로</button><br>
+    <button id=btn4>ul1아래서 ul2아래로</button><br>
+    <button id=btn5>ul2위에서 ul1위로</button><br>
+    <button id=btn6>ul2위에서 ul2아래로</button><br>
+    <button id=btn7>ul2아래서 ul1위로</button><br>
+    <button id=btn8>ul2아래서 ul1아래로</button><br>
+    <button id=btn9>삭제</button><br>
+    <input type="text" id="inputtext"><button id=btn10>수정</button>
+
+
+    <script>
+        //강사님은 변수 하나만 놓고 prepend() 사용
+
+
+        //A
+        document.getElementById("btn1").addEventListener("click", function () {
+            let a = document.querySelector("ul1").firstElementChild;
+            let b = document.querySelector("ul2").firstElementChild;
+            b.before(a);
+        });
+
+
+        //B
+        document.getElementById("btn2").addEventListener("click", function () {
+            let a = document.querySelector("ul1").firstElementChild;
+            let b = document.querySelector("ul2").lastElementChild;
+            b.after(a);
+        });
+
+        //C
+        document.getElementById("btn3").addEventListener("click", function () {
+            let a = document.querySelector("ul1").lastElementChild;
+            let b = document.querySelector("ul2").firstElementChild;
+            b.before(a);
+        });
+
+        //D
+        document.getElementById("btn4").addEventListener("click", function () {
+            let a = document.querySelector("ul1").lastElementChild;
+            let b = document.querySelector("ul2").lastElementChild;
+            b.after(a);
+        });
+
+        //E
+        document.getElementById("btn5").addEventListener("click", function () {
+            let a = document.querySelector("ul2").firstElementChild;
+            document.querySelector("ul1").prepend(a);
+        });
+
+        //F
+        document.getElementById("btn6").addEventListener("click", function () {
+            let a = document.querySelector("ul2").firstElementChild;
+            document.querySelector("ul1").append(a);
+        });
+
+        //G
+        document.getElementById("btn7").addEventListener("click", function () {
+            let a = document.querySelector("ul2").lastElementChild;
+            document.querySelector("ul1").prepend(a);
+        });
+
+        //H
+        document.getElementById("btn8").addEventListener("click", function () {
+            let a = document.querySelector("ul2").lastElementChild;
+            document.querySelector("ul1").append(a);
+        });
+
+        //I
+        document.getElementById("btn9").addEventListener("click", function () {
+            let arr = document.getElementsByName("item");
+            for (let index = 0; index < arr.length; index++) {
+                if (arr[index].checked) {
+                    arr[index].parentElement.remove();
+                    index--;
+                }
+            }
+            console.dir(arr);
+        });
+
+        //J
+        document.getElementById("btn10").addEventListener("click", function(){
+            let arr = document.getElementsByName("item");
+            // let label = document.getElementsByTagName("label"); //<label>
+                for (let index = 0; index < arr.length; index++) {
+                    if(arr[index].checked){
+                        arr[index].innerText = document.getElementById("inputtext").value;
+                    };
+                };
+
+            // for (let index = 0; index < arr.length; index++) {
+            //     if(arr[index].checked) {
+            //         arr[index].previousElementSibling.innerText = document.getElementById("inputtext").value;
+            //     };
+            // };
+
+        });
+
+
+    </script>
+    <!--
+A. ul1위에서 ul2위로 : ul1에 있던 목록 중 맨 위의 목록을 ul2의 맨 위로 이동시킨다.
+B. ul1위에서 ul2아래로 : u1에 있던 목록 중 맨 위의 목록을 ul2의 맨 아래로 이동시킨
+다.
+C. ul1아래서 ul2위로 : ul1에 있던 목록 중 맨 아래의 목록을 ul2의 맨 위로 이동시킨다.
+D. ul1아래서 ul2아래로 : ul1에 있던 목록 중 맨 아래의 목록을 ul2의 맨 아래로 이동시
+킨다.
+E. ul2위에서 ul1위로 : ul2에 있던 목록 중 맨 위의 목록을 ul1의 맨 위로 이동시킨다.
+F. ul2위에서 ul1아래로 : ul2에 있던 목록 중 맨 위의 목록을 ul1의 맨 아래로 이동시킨
+다.
+G. ul2아래서 ul1위로 : ul2에 있던 목록 중 맨 아래의 목록을 ul1의 맨 위로 이동시킨다.
+H. ul2아래서 ul1아래로 : ul2에 있던 목록 중 맨 아래의 목록을 ul1의 맨 아래로 이동시
+킨다.
+I. 삭제 : 체크박스에 체크 되어있는 li 아이템들을 삭제한다.
+J. 수정 : 체크박스에 체크 되어있는 li 아이템들을 수정한다.(수정되는 내용은 input 
+type=”text” 에 대한 내용으로 대체한다-->
+</body>
+
+</html>

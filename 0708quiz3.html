@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list">
+        <li id="item1">불고기</li>
+        <li id="item2">김치</li>
+        <li id="item3">감자전</li>
+        <li id="item4">호박전</li>
+        <li id="item5">육전</li>
+        <li id="item6">파래무침</li>
+    </ul>
+    <button id="btn">오름차순정렬</button>
+
+    <script>
+    // document.getElementById("btn").addEventListener("click", function(){
+    //         const list = document.getElementById("list").children; //list안에 있는 자식들 전체
+
+    //         let ul = document.getElementById("list"); //나중에 정렬해서 여기 넣어야하니까 통째로 받기
+
+    //         Array.from(list).sort((a,b) => a.textContent.localeCompare(b.textContent)) //여기까지가 정렬
+    //         //Array로 받아야하는애들 -> list, (a,b)=>~~~연산을 통해서 sort(정렬)하겟다
+    //         //두개의 파라미터 a,b 무작위로 받아서 정렬
+    //         //textContent기준으로 localCompare(유니코드 순 정렬)
+    //                 .forEach(li => ul.append(li));
+    //                 //정렬된 애들을 forEach문으로 li하나하나 ul에다가 차례로 넣겠다/
+    //     });
+
+
+        document.getElementById("btn").addEventListener("click", function(){
+            let list = document.getElementById("list").children;
+
+            let ul = document.getElementById("list");
+
+            Array.from(list).sort((a,b) => a.textContent.localeCompare(b.textContent))
+                    .forEach(li => ul.append(li));
+
+        });
+    </script>
+</body>
+</html>
