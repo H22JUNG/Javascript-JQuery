@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #div1 {
+            background-color: antiquewhite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top:0;
+            width: 100vw;
+        }
+        .big {
+            height: 200px;
+            font-size: 3rem;
+        }
+
+        .small{
+            position: fixed;
+            top: 0;
+            left: 0;
+            font-size: 1rem;
+            height: 100px;
+        }
+
+        #div2 {
+            padding: 20px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1" class="big">
+        <h1>Header</h1>
+    </div>
+
+    <div id="div2">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem molestias consectetur expedita
+        ratione porro saepe quas blanditiis dolore illo error, perferendis possimus odio aliquid reprehenderit.
+        Dolore amet suscipit nihil vitae?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius natus nulla consectetur voluptatem, libero,
+        ipsum modi placeat voluptate porro amet dolore dolor animi esse corrupti quos blanditiis praesentium neque
+        repudiandae?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, dolorum vel. Dicta perspiciatis molestias
+        odio alias eius, obcaecati quidem? Tempore fugit, rerum quidem quia nostrum laborum labore aspernatur illum
+        tempora!
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod labore est vero doloremque repellendus
+        praesentium quos maxime accusamus nihil eum ullam odio expedita, similique culpa dolorum optio neque. Ipsam,
+        dignissimos!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt officiis excepturi similique libero neque
+        non qui asperiores harum ducimus fugiat impedit laborum amet aliquid quaerat, natus magnam consectetur sequi
+        unde?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem molestias consectetur expedita
+        ratione porro saepe quas blanditiis dolore illo error, perferendis possimus odio aliquid reprehenderit.
+        Dolore amet suscipit nihil vitae?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius natus nulla consectetur voluptatem, libero,
+        ipsum modi placeat voluptate porro amet dolore dolor animi esse corrupti quos blanditiis praesentium neque
+        repudiandae?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, dolorum vel. Dicta perspiciatis molestias
+        odio alias eius, obcaecati quidem? Tempore fugit, rerum quidem quia nostrum laborum labore aspernatur illum
+        tempora!
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod labore est vero doloremque repellendus
+        praesentium quos maxime accusamus nihil eum ullam odio expedita, similique culpa dolorum optio neque. Ipsam,
+        dignissimos!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt officiis excepturi similique libero neque
+        non qui asperiores harum ducimus fugiat impedit laborum amet aliquid quaerat, natus magnam consectetur sequi
+        unde?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem molestias consectetur expedita
+        ratione porro saepe quas blanditiis dolore illo error, perferendis possimus odio aliquid reprehenderit.
+        Dolore amet suscipit nihil vitae?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius natus nulla consectetur voluptatem, libero,
+        ipsum modi placeat voluptate porro amet dolore dolor animi esse corrupti quos blanditiis praesentium neque
+        repudiandae?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, dolorum vel. Dicta perspiciatis molestias
+        odio alias eius, obcaecati quidem? Tempore fugit, rerum quidem quia nostrum laborum labore aspernatur illum
+        tempora!
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod labore est vero doloremque repellendus
+        praesentium quos maxime accusamus nihil eum ullam odio expedita, similique culpa dolorum optio neque. Ipsam,
+        dignissimos!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt officiis excepturi similique libero neque
+        non qui asperiores harum ducimus fugiat impedit laborum amet aliquid quaerat, natus magnam consectetur sequi
+        unde?
+    </div>
+
+    <script>
+        window.addEventListener("scroll", function(){
+            if(document.documentElement.scrollTop > 0) {
+                document.getElementById("div1").classList.remove("big");
+                document.getElementById("div1").classList.add("small");
+            } else {
+                document.getElementById("div1").classList.remove("small");
+                document.getElementById("div1").classList.add("big");
+            }
+        });
+    </script>
+</body>
+</html>
