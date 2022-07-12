@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        input {
+            width: 50vw;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <label for="name">수강생 이름 : </label><input type="text" name="name" id="name"><br>
+            <label for="hp">수강생 홈피 : </label><input type="text" name="hp" id="hp"><br><br>
+            <button id="btn">사용자 추가하기</button>
+            <div id="link">
+                <!-- <a href="hp"> name </a> -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("btn").addEventListener("click", function () {
+            //input값 불러오기
+            const name = document.getElementById("name").value;
+            const hp = document.getElementById("hp").value;
+
+            //a태그 생성하기
+            const atag = document.createElement("a")
+            //hp값을 주소로, name값을 링크명으로 넣기
+            atag.href = hp;
+            atag.innerText = name;
+
+            //화면에 a태그 띄우기
+            document.getElementById("link").append(atag);
+        });
+    </script>
+</body>
+
+</html>

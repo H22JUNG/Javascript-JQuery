@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 100%;
+            text-align: center;
+        }
+
+        input {
+            text-align: left;
+            border: none;
+            border-bottom: 1px solid gray;
+            padding: 10px;
+        }
+
+        #btn {
+            margin-left: 20px;
+            width: 70px;
+            height: 40px;
+        }
+
+        #btn:hover {
+            background-color: yellow;
+            border: 1px solid gray;
+            border-radius: 3px;
+        }
+
+        input:focus {
+            outline: none;
+        }
+        li {
+            list-style-type: none;
+            text-align: center;
+            /* padding-left: 50px; */
+        }
+
+        p {
+            display: inline;
+            color: blue;
+            padding-left: 200px;
+            cursor: pointer;
+        }
+        p:hover {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>참가 신청</h1>
+        <input type="text" id="input" value="" placeholder="이름을 입력하세요."><button id="btn">신청</button>
+        <div class="indiv">
+        <ul id="textul">
+            <!-- <li>
+                <span id="X"></span>
+            </li> -->
+        </ul>
+    </div>
+    </div>
+
+
+    <script>
+        document.getElementById("btn").addEventListener("click", function () {
+        
+            // input값 받아오면
+            const input = document.getElementById("input").value;
+
+            // 비어있는지 확인
+            if(input!==''){
+
+            // li 생성해서 그 안에 넣기
+            const li = document.createElement("li")
+            li.innerText = input;
+           
+            // (p태그 안에) X 만들기
+            const X = document.createElement("p")
+            X.innerText = "X";
+
+            // ul에 입력한 값 담긴 li 넣기
+            document.getElementById("textul").prepend(li);
+            // li 옆에 X 글자도 같이 넣기
+            document.querySelector("li").append(X);
+
+            //p태그(X글자) 클릭하면 지우기
+            document.querySelector("p").addEventListener("click", function(){
+            this.parentElement.remove();
+            });
+            }
+        });
+       
+    </script>
+</body>
+
+</html>
