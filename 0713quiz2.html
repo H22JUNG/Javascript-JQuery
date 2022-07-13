@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            text-align: center;
+        }
+
+        span {
+            font-size: 100px;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <span id="hour">00: </span>
+        <span id="min">00: </span>
+        <span id="sec">00</span>
+        <br>
+
+        <button id="btn1">Start</button>
+        <button id="btn2">Stop</button>
+        <button id="btn3">Reset</button>
+    </div>
+
+    <script>
+        document.getElementById("btn1").addEventListener("click", function () {
+            var sec = 0;
+            var min = 0;
+            var hour = 0;
+            console.log(sec);
+
+            const time = setInterval(function () {
+                sec++;
+                if (sec == 60) {
+                    min += 1;
+                    sec = 0;
+                }
+                else if (sec < 10) {
+                    document.getElementById("sec").innerText = "0" + sec;
+                } else {
+                    document.getElementById("sec").innerText = sec;
+                }
+
+
+                if (min == 60) {
+                    hour += 1;
+                    min = 0;
+                }
+                else if (min < 10) {
+                    document.getElementById("min").innerText = `0${min}: `;
+                } else {
+                    document.getElementById("min").innerText = min + ": ";
+                }
+
+
+                if (hour < 10) {
+                    document.getElementById("hour").innerText = `0${hour}: `;
+                } else {
+                    document.getElementById("hour").innerText = hour + ": ";
+                }
+
+
+                document.getElementById("btn2").addEventListener("click", function () {
+                    clearInterval(time);
+                }
+                );
+
+                document.getElementById("btn3").addEventListener("click", function () {
+                    // sec = 0;
+                    // min = 0;
+                    // hour = 0;
+                    document.getElementById("hour").innerText = "00: ";
+                    document.getElementById("min").innerText = "00: ";
+                    document.getElementById("sec").innerText = "00";
+                });
+
+
+            }, 1);
+
+            document.getElementById("time").prepend(time);
+        });
+
+
+    </script>
+</body>
+
+</html>

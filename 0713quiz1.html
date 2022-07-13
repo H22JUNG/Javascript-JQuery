@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+        <p id="second"> 0 초 남았습니다!</p>
+        <button id="btn">Go!</button>
+    </div>
+
+    <script>
+        document.getElementById("btn").addEventListener("click", function () {
+            this.style.display = "none";
+            document.getElementById("container").innerHTML = `<p>60초 남았습니다!</>`;
+
+            var num = 59;
+            const time = setInterval(function () {
+                
+                document.getElementById("container").innerHTML = `<p>${num}초 남았습니다!</>`;
+                  num--;
+                    if(num == -1) {
+                        clearInterval(time);
+                    }
+            }, 1000);
+        });
+    </script>
+</body>
+
+</html>
